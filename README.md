@@ -1,5 +1,5 @@
-# Air - Monitor Mode Toggler
-Air is a monitor mode shortcut for the Linux Shell environment. This simple bash script allows users to conveniently switch the wireless network adapter to monitor mode and back. It is designed to streamline the process of toggling monitor mode for network analysis and related tasks.
+# air - Monitor Mode Toggler Shortcut
+air is a simple bash script allows users to conveniently toggle the wireless network adapter to monitor mode and back.
 
 ## Requirements
 
@@ -15,6 +15,10 @@ Air is a monitor mode shortcut for the Linux Shell environment. This simple bash
 
 - Check Shell environment:
 ```echo $SHELL```
+
+***
+WARNING! :- Make a backup of ```.zshrc``` OR ```.bashrc``` file before proceeding any further.
+***
 
 - For ZSH shell:
 ```cat air.txt >> .zshrc```
