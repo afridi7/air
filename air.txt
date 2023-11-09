@@ -1,0 +1,46 @@
+# air - monitor mode toggler shortcut
+# check out https://github.com/afridi7/air for more info
+
+air() {
+RED="\e[31m"
+GREEN="\e[32m"
+BOLDGREEN="\e[1;32m"
+BOLD="\e[1m"
+ENDCOLOR="\e[0m"
+
+local interface="$1"
+local monitor_mode_interface="${interface}"
+if [[ "$interface" != *mon ]]; then
+        monitor_mode_interface="${interface}mon"
+fi
+if [ "$2" == "on" ]; then
+        if [[ $(iwconfig $interface | grep "Mode:Monitor") || $(iwconfig $monitor_mode_interface | grep "Mode:Monitor") ]]; then
+                echo "${RED}Interface $monitor_mode_interface is already in monitor mode. ${ENDCOLOR}"
+        else
+                echo "Putting $interface in monitor mode..."
+                ifconfig $interface down 2>/dev/null
+                airmon-ng check kill
+                airmon-ng start $interface
+                ifconfig $monitor_mode_interface up 2>/dev/null
+                echo "${BOLDGREEN} $monitor_mode_interface${ENDCOLOR} is in ${BOLD}monitor${ENDCOLOR} mode."
+        fi
+elif [ "$2" == "off" ]; then
+        if [[ ! $(iwconfig $monitor_mode_interface | grep "Mode:Monitor") && ! $(iwconfig $interface | grep "Mode:Monitor") ]]; then
+                echo "${RED}Interface $interface is not on monitor mode. ${ENDCOLOR}" 
+        else
+                echo "Disabling monitor mode for $interface..."
+                ifconfig $monitor_mode_interface $interface down 2>/dev/null
+                airmon-ng stop $monitor_mode_interface $interface
+                service NetworkManager restart
+                ifconfig $interface up 2>/dev/null
+                echo "${BOLDGREEN} $interface${ENDCOLOR} is in ${BOLD}managed${ENDCOLOR} mode."
+        fi
+elif [ "$1" == "-h" ]; then
+        echo "A more sophisticated way to use of airmon-ng. \nUsage: air [interface] [Option] \n \non  - Puts interface in monitor mode. \noff - Puts interface in managed mode"
+elif [ "$1" == "--help" ]; then
+        echo "A more sophisticated way to use of airmon-ng. \nUsage: air [interface] [Option] \n \non  - Puts interface in monitor mode. \noff - Puts interface in managed mode"
+else
+        echo "Invalid input. Please use 'air [interface] on' or 'air [interface] off', or use -h, --help."
+fi
+}
+
