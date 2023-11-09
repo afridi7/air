@@ -36,9 +36,15 @@ elif [ "$2" == "off" ]; then
                 echo "${BOLDGREEN} $interface${ENDCOLOR} is in ${BOLD}managed${ENDCOLOR} mode."
         fi
 elif [ "$1" == "-h" ]; then
-        echo "A more sophisticated way to use of airmon-ng. \nUsage: air [interface] [Option] \n \non  - Puts interface in monitor mode. \noff - Puts interface in managed mode"
+
+        echo "# Air - Monitor Mode Toggler
+Air is a monitor mode shortcut for the Linux Shell environment. This simple bash script allows users to conveniently switch the wireless network adapter to monitor mode and back. It is designed to streamline the process of toggling monitor mode for network analysis and related tasks. \nUsage: air [interface] [Option] \n \non  - Puts interface in monitor mode. \noff - Puts interface in managed mode"
+
 elif [ "$1" == "--help" ]; then
-        echo "A more sophisticated way to use of airmon-ng. \nUsage: air [interface] [Option] \n \non  - Puts interface in monitor mode. \noff - Puts interface in managed mode"
+
+        echo "# Air - Monitor Mode Toggler
+Air is a monitor mode shortcut for the Linux Shell environment. This simple bash script allows users to conveniently switch the wireless network adapter to monitor mode and back. It is designed to streamline the process of toggling monitor mode for network analysis and related tasks. \nUsage: air [interface] [Option] \n \non  - Puts interface in monitor mode. \noff - Puts interface in managed mode"
+
 else
         echo "Invalid input. Please use 'air [interface] on' or 'air [interface] off', or use -h, --help."
 fi
