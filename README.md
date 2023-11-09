@@ -9,14 +9,14 @@ Air is a monitor mode shortcut for the Linux Shell environment. This simple bash
 
 ## Installation
 
-- Download files
+- Download files: 
 ```wget https://raw.githubusercontent.com/afridi7/air/main/air.txt```
 
-- Check Shell environment
+- Check Shell environment: 
 ```echo $SHELL```
 
-- For ZSH shell:
+- For ZSH shell: 
 ```cat air.txt >> .zshrc```
 
-- For BASH shell:
+- For BASH shell: 
 ```cat air.txt >> .bashrc```
