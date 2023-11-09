@@ -26,6 +26,10 @@ WARNING! :- Make a backup of ```.zshrc``` OR ```.bashrc``` file before proceedin
 - For BASH shell:
 ```cat air.txt >> .bashrc```
 
+***
+- Once Installation is done, restart the terminal.
+***
+
 ## Usage
 
 ```air [interface] [Option] ```
