@@ -17,7 +17,7 @@ air is a simple bash script that allows users to conveniently toggle the wireles
 ```echo $SHELL```
 
 ***
-WARNING! :- Make a backup of ```.zshrc``` OR ```.bashrc``` file before proceeding any further.
+⚠️WARNING‼️ :- Make a backup of ```.zshrc``` OR ```.bashrc``` file before proceeding any further.
 ***
 
 - For ZSH shell:
