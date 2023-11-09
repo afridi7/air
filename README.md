@@ -26,6 +26,8 @@ Air is a monitor mode shortcut for the Linux Shell environment. This simple bash
 
 ```air [interface] [Option] ```
 
+## Options
+
 on  - Puts interface in monitor mode.\
 off - Puts interface in managed mode.\
 -h, --help  - shows options
