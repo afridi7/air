@@ -1,5 +1,5 @@
 # air - Monitor Mode Toggler Shortcut
-air is a simple bash script allows users to conveniently toggle the wireless network adapter to monitor mode and back.
+air is a simple bash script that allows users to conveniently toggle the wireless network adapter to monitor mode and back.
 
 ## Requirements
 
