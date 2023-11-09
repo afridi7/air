@@ -6,6 +6,7 @@ Air is a monitor mode shortcut for the Linux Shell environment. This simple bash
 - A Linux-based operating system. I recommend Kali Linux.
 - airmon-ng
 - net-tools
+- grep
 
 ## Installation
 
