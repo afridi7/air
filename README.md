@@ -5,9 +5,18 @@ Air is a monitor mode shortcut for the Linux Shell environment. This simple bash
 
 - A Linux-based operating system. I recommend Kali Linux.
 - airmon-ng
-- 
+- net-tools
 
 ## Installation
 
-1. wget ''
-2. shift to ..
+- Download files
+```wget https://raw.githubusercontent.com/afridi7/air/main/air.txt```
+
+- Check Shell environment
+```echo $SHELL```
+
+- For ZSH shell:
+```cat air.txt >> .zshrc```
+
+- For BASH shell:
+```cat air.txt >> .bashrc```
