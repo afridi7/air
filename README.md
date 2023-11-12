@@ -4,9 +4,9 @@ air is a simple bash script that allows users to conveniently toggle the wireles
 ## Requirements
 
 - A Linux-based operating system. I recommend Kali Linux.
-- airmon-ng
-- net-tools
-- grep
+- airmon-ng ```apt-get airmon-ng```
+- net-tools ```apt-get install net-tools```
+- grep ```apt-get install grep```
 
 ## Installation
 
