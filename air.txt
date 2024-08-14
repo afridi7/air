@@ -19,8 +19,8 @@ if [ "$2" == "on" ]; then
         else
                 echo "Putting $interface in monitor mode..."
                 ifconfig $interface down 2>/dev/null
-                airmon-ng check kill
-                airmon-ng start $interface
+                sudo airmon-ng check kill
+                sudo airmon-ng start $interface
                 ifconfig $monitor_mode_interface up 2>/dev/null
                 echo "${BOLDGREEN} $monitor_mode_interface${ENDCOLOR} is in ${BOLD}monitor${ENDCOLOR} mode."
         fi
@@ -30,8 +30,8 @@ elif [ "$2" == "off" ]; then
         else
                 echo "Disabling monitor mode for $interface..."
                 ifconfig $monitor_mode_interface $interface down 2>/dev/null
-                airmon-ng stop $monitor_mode_interface $interface
-                service NetworkManager restart
+                sudo airmon-ng stop $monitor_mode_interface $interface
+                sudo service NetworkManager restart
                 ifconfig $interface up 2>/dev/null
                 echo "${BOLDGREEN} $interface${ENDCOLOR} is in ${BOLD}managed${ENDCOLOR} mode."
         fi
